@@ -1,9 +1,12 @@
 server:
   port: 9010
-
+build:
+  version: "${build.version}"
 spring:
   application:
     name: "message"
+  config:
+    import: "optional:configserver:http://localhost:8071/"
   cloud:
     function:
       definition: email|sms
